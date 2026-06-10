@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroforte: Futuro Sustentável - Concurso Agrinho 2026</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="progressContainer">
+        <div class="progress-title">
+            🌱 ÍNDICE DE SUSTENTABILIDADE | AGRINHO 2026
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <span id="progressText">0%</span>
+    </div>
+
+    <section id="presentationCover" class="screen active">
+        <div class="particles"></div>
+
+        <div class="hero-content">
+            <h1>
+                AGROFORTE:
+                <span>FUTURO SUSTENTÁVEL</span>
+            </h1>
+
+            <h2>
+                Uma jornada interativa sobre o equilíbrio entre
+                produção e meio ambiente — Concurso Agrinho 2026.
+            </h2>
+
+            <p class="impact">
+                "Entre o campo que alimenta o presente e a natureza
+                que protege o futuro, existe um caminho chamado
+                sustentabilidade."
+            </p>
+
+            <div class="student-box">
+                <input type="text" placeholder="Nome do aluno">
+                <input type="text" placeholder="Escola">
+                <input type="text" placeholder="Professor orientador">
+            </div>
+
+            <button id="startPresentation" class="main-btn">
+                INICIAR APRESENTAÇÃO
+            </button>
+        </div>
+
+        <div class="landscape">
+            <div class="sun"></div>
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="field"></div>
+            <div class="windmill"></div>
+        </div>
+    </section>
+
+    <section id="bookCover" class="screen">
+        <div class="book-cover-card">
+            <div class="book-decoration"></div>
+
+            <h1>AGROFORTE</h1>
+            <h2>Futuro Sustentável</h2>
+            <p style="margin-bottom: 5px; font-weight: 600; color: #2ecc71;">EDIÇÃO AGRINHO 2026</p>
+            <p>"Cada escolha feita hoje cultiva o amanhã."</p>
+
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="Agricultura sustentável">
+            <button id="openBookBtn" class="main-btn">
+                ABRIR LIVRO
+            </button>
+
+            <button class="secondary-btn backPresentation">
+                Voltar
+            </button>
+        </div>
+    </section>
+
+    <section id="bookSection" class="screen">
+        <div class="book-container">
+            <div class="mascot">
+                🌱
+                <div class="speech">
+                    Olá! Eu sou a Sementinha e vou mostrar
+                    como o agro e a natureza podem crescer
+                    juntos.
+                </div>
+            </div>
+
+            <div class="page active-page" data-progress="10">
+                <h1>Capítulo 1</h1>
+                <h2>O que é o Agronegócio?</h2>
+                <img src="https://s3.us-east-1.amazonaws.com/vnda-cockpit/www-fertisystem-com-br/2021/06/23/60d36491c75b6original-f416f12134f6148a0ea841b390d826f9-780x450.jpeg" alt="Agronegócio">
+                <p>
+                    O agronegócio é um dos pilares da economia
+                    brasileira. Ele reúne todas as atividades
+                    relacionadas à produção, processamento,
+                    transporte e comercialização de alimentos,
+                    fibras e matérias-primas.
+                </p>
+                <p>
+                    Além de abastecer milhões de pessoas,
+                    o setor gera empregos, movimenta
+                    a economia e fortalece as exportações.
+                </p>
+            </div>
+
+            <div class="page" data-progress="25">
+                <h1>Capítulo 2</h1>
+                <h2>O que é Sustentabilidade?</h2>
+                <img src="https://images.unsplash.com/photo-1497436072909-f5e4be8f6e39" alt="Sustentabilidade">
+                <p>
+                    Sustentabilidade significa utilizar os
+                    recursos naturais de forma consciente,
+                    garantindo qualidade de vida para as
+                    futuras gerações.
+                </p>
+                <p>
+                    Produzir sem destruir é o grande desafio
+                    do século XXI.
+                </p>
+            </div>
+
+            <div class="page" data-progress="40">
+                <h1>Capítulo 3</h1>
+                <h2>Tecnologias Sustentáveis</h2>
+                <div class="tech-grid">
+                    <div class="tech-card"><i class="fas fa-droplet"></i><span>Irrigação Inteligente</span></div>
+                    <div class="tech-card"><i class="fas fa-seedling"></i><span>Plantio Direto</span></div>
+                    <div class="tech-card"><i class="fas fa-satellite"></i><span>Agricultura de Precisão</span></div>
+                    <div class="tech-card"><i class="fas fa-drone"></i><span>Drones Agrícolas</span></div>
+                    <div class="tech-card"><i class="fas fa-solar-panel"></i><span>Energia Solar</span></div>
+                    <div class="tech-card"><i class="fas fa-microchip"></i><span>Sensores Inteligentes</span></div>
+                </div>
+            </div>
+
+            <div class="page" data-progress="55">
+                <h1>Capítulo 4</h1>
+                <h2>Desafios Ambientais</h2>
+                <img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e7" alt="Desafios">
+                <ul>
+                    <li>Desmatamento ilegal</li>
+                    <li>Poluição dos rios</li>
+                    <li>Uso inadequado de agrotóxicos</li>
+                    <li>Perda da biodiversidade</li>
+                    <li>Mudanças climáticas</li>
+                </ul>
+            </div>
+
+            <div class="page" data-progress="70">
+                <h1>Capítulo 5</h1>
+                <h2>Mapa do Brasil Vivo</h2>
+                <div class="map-container">
+                    <div class="region" data-region="norte">Norte</div>
+                    <div class="region" data-region="nordeste">Nordeste</div>
+                    <div class="region" data-region="centro">Centro-Oeste</div>
+                    <div class="region" data-region="sudeste">Sudeste</div>
+                    <div class="region" data-region="sul">Sul</div>
+                </div>
+                <div id="regionInfo"></div>
+            </div>
+
+            <div class="page" data-progress="85">
+                <h1>Capítulo 6</h1>
+                <h2>Curiosidades Escondidas</h2>
+                <p>Clique nos pontos brilhantes e descubra curiosidades incríveis.</p>
+                <div class="curiosity-area">
+                    <div class="curiosity" data-text="O Brasil está entre os maiores produtores agrícolas do mundo."></div>
+                    <div class="curiosity" data-text="Muitas fazendas utilizam energia solar."></div>
+                    <div class="curiosity" data-text="A agricultura de precisão reduz desperdícios."></div>
+                    <div class="curiosity" data-text="O plantio direto preserva o solo."></div>
+                    <div class="curiosity" data-text="Inteligência Artificial já é usada no campo."></div>
+                </div>
+            </div>
+
+            <div class="page" data-progress="95">
+                <h1>Capítulo 7</h1>
+                <h2>Soluções para o Futuro</h2>
+                <div class="solutions">
+                    <div>Educação Ambiental</div>
+                    <div>Fiscalização</div>
+                    <div>Tecnologias Sustentáveis</div>
+                    <div>Consumo Consciente</div>
+                    <div>Incentivos Governamentais</div>
+                    <div>Participação da Sociedade</div>
+                </div>
+            </div>
+
+            <div class="page" data-progress="98">
+                <h1>Capítulo 8</h1>
+                <h2>Sua Escolha Muda o Futuro</h2>
+                <h3>Que futuro você deseja construir?</h3>
+                <div class="choice-area">
+                    <button class="future-choice positive">🌳 Preservar a Natureza</button>
+                    <button class="future-choice negative">🏭 Ignorar os Impactos</button>
+                </div>
+                <div id="futureResult"></div>
+            </div>
+
+            <div class="navigation">
+                <button id="prevPage">⬅ Página Anterior</button>
+                <button id="nextPage">Próxima Página ➡</button>
+            </div>
+
+            <div class="extra-buttons">
+                <button id="backBookCover">Voltar para Capa</button>
+                <button id="backPresentationBtn">Capa Inicial</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="finalCover" class="screen">
+        <div class="final-landscape">
+            <div class="tree-growth">
+                <div class="seed"></div>
+                <div class="stem"></div>
+                <div class="tree"></div>
+            </div>
+        </div>
+
+        <div class="final-content">
+            <h1>OBRIGADO POR FAZER PARTE DESTA JORNADA</h1>
+            <h2>Produzir e preservar podem caminhar juntos.</h2>
+            <p>O futuro sustentável depende das escolhas que fazemos hoje.</p>
+
+            <div class="mascot-message">
+                🌱 Quando uma única semente é cuidada, ela alimenta o futuro.
+                O mesmo acontece com nossas escolhas.
+            </div>
+
+            <div class="final-progress">
+                🌱 Índice de Sustentabilidade Agrinho 2026: <strong>100%</strong>
+            </div>
+
+            <button id="restartBook" class="main-btn">
+                RECOMEÇAR LIVRO
+            </button>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

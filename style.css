@@ -1,0 +1,1944 @@
+/* ===================================================
+   AGROFORTE: FUTURO SUSTENTÁVEL
+   Concurso Agrinho
+   PARTE 1
+=================================================== */
+
+/* ===================================================
+   RESET
+=================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0b1220;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* ===================================================
+   VARIÁVEIS
+=================================================== */
+
+:root{
+
+    --verde:#2ecc71;
+    --verde-escuro:#1d8348;
+
+    --azul:#3498db;
+    --azul-escuro:#0b2545;
+
+    --marrom:#6e4b1f;
+    --cinza:#5f6b72;
+
+    --preto:#111111;
+
+    --lilas:#b79ced;
+
+    --vermelho:#d62828;
+
+    --branco:#ffffff;
+
+    --sombra:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* ===================================================
+   TELAS
+=================================================== */
+
+.screen{
+    width:100%;
+    min-height:100vh;
+    display:none;
+}
+
+.active{
+    display:flex;
+}
+
+/* ===================================================
+   BARRA DE SUSTENTABILIDADE
+=================================================== */
+
+#progressContainer{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:99999;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+
+    padding:12px 20px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.progress-title{
+
+    font-weight:700;
+
+    color:#7dff9f;
+
+    white-space:nowrap;
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:15px;
+
+    background:#202c3d;
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2ecc71,
+        #00e5ff
+    );
+
+    transition:.8s;
+}
+
+#progressText{
+
+    font-weight:700;
+
+    color:white;
+
+    min-width:45px;
+}
+
+/* ===================================================
+   CAPA DE APRESENTAÇÃO
+=================================================== */
+
+#presentationCover{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #09111d 0%,
+        #14344f 35%,
+        #1f5c31 100%
+    );
+}
+
+/* ===================================================
+   CONTEÚDO HERO
+=================================================== */
+
+.hero-content{
+
+    z-index:10;
+
+    width:90%;
+    max-width:1000px;
+
+    text-align:center;
+
+    padding:40px;
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    animation:fadeUp 1.5s ease;
+}
+
+.hero-content h1 span{
+
+    color:#58ff90;
+
+    display:block;
+}
+
+.hero-content h2{
+
+    font-size:1.4rem;
+
+    font-weight:400;
+
+    margin-bottom:30px;
+
+    color:#dfefff;
+}
+
+.impact{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    color:#f4f4f4;
+
+    margin-bottom:40px;
+}
+
+/* ===================================================
+   FORMULÁRIO
+=================================================== */
+
+.student-box{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:30px;
+}
+
+.student-box input{
+
+    width:280px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    font-size:1rem;
+
+    outline:none;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.15);
+}
+
+.student-box input:focus{
+
+    border:2px solid #2ecc71;
+}
+
+/* ===================================================
+   BOTÕES
+=================================================== */
+
+.main-btn{
+
+    border:none;
+
+    padding:16px 35px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2ecc71,
+        #27ae60
+    );
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+}
+
+.main-btn:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+    box-shadow:
+    0 20px 35px rgba(0,0,0,.35);
+}
+
+.secondary-btn{
+
+    margin-top:15px;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:#243447;
+
+    color:white;
+
+    transition:.4s;
+}
+
+.secondary-btn:hover{
+
+    background:#3d566f;
+}
+
+/* ===================================================
+   PAISAGEM
+=================================================== */
+
+.landscape{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    inset:0;
+}
+
+/* ===================================================
+   SOL
+=================================================== */
+
+.sun{
+
+    width:180px;
+    height:180px;
+
+    background:
+    radial-gradient(
+        circle,
+        #ffe066,
+        #ffae00
+    );
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:100px;
+    right:120px;
+
+    animation:
+    pulseSun 5s infinite ease-in-out;
+}
+
+.sun::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.2);
+
+    animation:
+    spin 20s linear infinite;
+}
+
+/* ===================================================
+   NUVENS
+=================================================== */
+
+.cloud{
+
+    position:absolute;
+
+    width:220px;
+    height:70px;
+
+    background:white;
+
+    border-radius:100px;
+
+    opacity:.8;
+}
+
+.cloud::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    background:white;
+
+    border-radius:50%;
+
+    top:-40px;
+    left:35px;
+}
+
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    background:white;
+
+    border-radius:50%;
+
+    top:-50px;
+    right:30px;
+}
+
+.cloud1{
+
+    top:130px;
+
+    left:-250px;
+
+    animation:
+    moveCloud 50s linear infinite;
+}
+
+.cloud2{
+
+    top:250px;
+
+    left:-300px;
+
+    animation:
+    moveCloud 70s linear infinite;
+}
+
+/* ===================================================
+   CAMPO AGRÍCOLA
+=================================================== */
+
+.field{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+    height:35%;
+
+    background:
+    linear-gradient(
+        180deg,
+        #52b788,
+        #2d6a4f
+    );
+
+    clip-path:
+    polygon(
+        0 30%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+/* ===================================================
+   MOINHO
+=================================================== */
+
+.windmill{
+
+    width:12px;
+    height:180px;
+
+    background:#ddd;
+
+    position:absolute;
+
+    bottom:20%;
+
+    right:15%;
+}
+
+.windmill::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:4px solid white;
+
+    top:-70px;
+    left:-55px;
+
+    animation:
+    spin 6s linear infinite;
+}
+
+/* ===================================================
+   PARTÍCULAS
+=================================================== */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+}
+
+.particles::before,
+.particles::after{
+
+    content:"🍃";
+
+    position:absolute;
+
+    font-size:2rem;
+
+    animation:
+    floatLeaf 15s linear infinite;
+}
+
+.particles::before{
+
+    left:10%;
+}
+
+.particles::after{
+
+    left:80%;
+
+    animation-delay:5s;
+}
+
+/* ===================================================
+   ANIMAÇÕES
+=================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(50px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes pulseSun{
+
+    0%{
+
+        transform:scale(1);
+    }
+
+    50%{
+
+        transform:scale(1.08);
+    }
+
+    100%{
+
+        transform:scale(1);
+    }
+}
+
+@keyframes moveCloud{
+
+    from{
+
+        transform:
+        translateX(-300px);
+    }
+
+    to{
+
+        transform:
+        translateX(160vw);
+    }
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:
+        rotate(0deg);
+    }
+
+    to{
+
+        transform:
+        rotate(360deg);
+    }
+}
+
+@keyframes floatLeaf{
+
+    0%{
+
+        top:-10%;
+        transform:rotate(0deg);
+    }
+
+    100%{
+
+        top:110%;
+        transform:rotate(360deg);
+    }
+}
+
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media(max-width:900px){
+
+    .hero-content h1{
+
+        font-size:2.8rem;
+    }
+
+    .hero-content h2{
+
+        font-size:1.1rem;
+    }
+
+    .impact{
+
+        font-size:1rem;
+    }
+
+    .sun{
+
+        width:120px;
+        height:120px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero-content{
+
+        padding:20px;
+    }
+
+    .hero-content h1{
+
+        font-size:2rem;
+    }
+
+    .student-box{
+
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .student-box input{
+
+        width:100%;
+        max-width:350px;
+    }
+
+    .progress-title{
+
+        display:none;
+    }
+}
+/* ===================================================
+   CAPA DO LIVRO
+=================================================== */
+
+#bookCover{
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0b1220,
+        #132238,
+        #1e3a5f
+    );
+
+    padding:100px 20px;
+}
+
+.book-cover-card{
+
+    width:90%;
+    max-width:700px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #4b2e15,
+        #6f4518,
+        #8b5e34
+    );
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    position:relative;
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.45);
+
+    overflow:hidden;
+
+    animation:
+    bookAppear 1s ease;
+}
+
+.book-decoration{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:18px;
+    height:100%;
+
+    background:
+    linear-gradient(
+        #d4af37,
+        #f4d03f
+    );
+}
+
+.book-cover-card h1{
+
+    font-size:3rem;
+
+    color:#fff8dc;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+}
+
+.book-cover-card h2{
+
+    color:#d8f3dc;
+
+    margin-bottom:20px;
+}
+
+.book-cover-card p{
+
+    color:#f5f5f5;
+
+    margin-bottom:25px;
+
+    font-style:italic;
+}
+
+.book-cover-card img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
+}
+
+@keyframes bookAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(60px)
+        scale(.9);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+/* ===================================================
+   ÁREA DO LIVRO
+=================================================== */
+
+#bookSection{
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        180deg,
+        #707070 0%,
+        #8b8b8b 20%,
+        #91c788 60%,
+        #2d6a4f 100%
+    );
+
+    padding-top:120px;
+    padding-bottom:50px;
+
+    position:relative;
+
+    transition:1s;
+}
+
+/* ===================================================
+   LIVRO 3D
+=================================================== */
+
+.book-container{
+
+    width:92%;
+    max-width:1100px;
+
+    min-height:720px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #f7f1e3,
+        #fffdf7
+    );
+
+    border-radius:25px;
+
+    padding:50px;
+
+    position:relative;
+
+    box-shadow:
+    0 40px 80px rgba(0,0,0,.45);
+
+    overflow:hidden;
+}
+
+.book-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:10px;
+    height:100%;
+
+    background:
+    linear-gradient(
+        #b08968,
+        #7f5539
+    );
+
+    opacity:.5;
+}
+
+/* ===================================================
+   PÁGINAS
+=================================================== */
+
+.page{
+
+    display:none;
+
+    animation:
+    pageTurn .8s ease;
+
+    color:#1d1d1d;
+}
+
+.active-page{
+
+    display:block;
+}
+
+.page h1{
+
+    color:#2d6a4f;
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+.page h2{
+
+    color:#1b4332;
+
+    margin-bottom:25px;
+}
+
+.page h3{
+
+    margin-bottom:25px;
+}
+
+.page p{
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+}
+
+.page img{
+
+    width:100%;
+
+    max-height:350px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.18);
+}
+
+.page ul{
+
+    padding-left:25px;
+}
+
+.page li{
+
+    margin-bottom:15px;
+
+    font-size:1.05rem;
+}
+
+@keyframes pageTurn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        rotateY(-15deg)
+        translateX(50px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        rotateY(0)
+        translateX(0);
+    }
+}
+
+/* ===================================================
+   MASCOTE SEMENTINHA
+=================================================== */
+
+.mascot{
+
+    position:absolute;
+
+    top:30px;
+    right:30px;
+
+    font-size:4rem;
+
+    z-index:10;
+
+    animation:
+    mascotFloat 4s ease-in-out infinite;
+}
+
+.speech{
+
+    position:absolute;
+
+    top:10px;
+    right:90px;
+
+    width:260px;
+
+    background:white;
+
+    color:#222;
+
+    font-size:.85rem;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.2);
+}
+
+.speech::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-12px;
+    top:20px;
+
+    border-left:12px solid white;
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+}
+
+@keyframes mascotFloat{
+
+    0%{
+
+        transform:
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translateY(-12px);
+    }
+
+    100%{
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ===================================================
+   TECNOLOGIAS
+=================================================== */
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.tech-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.12);
+
+    transition:.4s;
+}
+
+.tech-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    background:#e8fff0;
+}
+
+.tech-card i{
+
+    font-size:2.5rem;
+
+    color:#2ecc71;
+
+    margin-bottom:15px;
+}
+
+.tech-card span{
+
+    display:block;
+
+    font-weight:600;
+}
+
+/* ===================================================
+   MAPA INTERATIVO
+=================================================== */
+
+.map-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+.region{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2ecc71,
+        #27ae60
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.4s;
+}
+
+.region:hover{
+
+    transform:
+    scale(1.05);
+
+    background:
+    linear-gradient(
+        135deg,
+        #3498db,
+        #2ecc71
+    );
+}
+
+#regionInfo{
+
+    margin-top:30px;
+
+    background:white;
+
+    color:#222;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    min-height:90px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.15);
+}
+
+/* ===================================================
+   CURIOSIDADES
+=================================================== */
+
+.curiosity-area{
+
+    position:relative;
+
+    width:100%;
+
+    height:450px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0d1b2a,
+        #1b4332
+    );
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.curiosity{
+
+    position:absolute;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:#ffd60a;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px #ffd60a,
+    0 0 30px #ffd60a;
+
+    animation:
+    blink 2s infinite;
+}
+
+/* posições */
+
+.curiosity:nth-child(1){
+
+    top:20%;
+    left:18%;
+}
+
+.curiosity:nth-child(2){
+
+    top:60%;
+    left:40%;
+}
+
+.curiosity:nth-child(3){
+
+    top:30%;
+    left:70%;
+}
+
+.curiosity:nth-child(4){
+
+    top:75%;
+    left:78%;
+}
+
+.curiosity:nth-child(5){
+
+    top:45%;
+    left:55%;
+}
+
+@keyframes blink{
+
+    0%{
+
+        opacity:.4;
+    }
+
+    50%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:.4;
+    }
+}
+
+/* ===================================================
+   SOLUÇÕES
+=================================================== */
+
+.solutions{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+.solutions div{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.15);
+
+    transition:.4s;
+}
+
+.solutions div:hover{
+
+    background:#d8f3dc;
+
+    transform:
+    translateY(-8px);
+}
+
+/* ===================================================
+   NAVEGAÇÃO
+=================================================== */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:40px;
+
+    gap:20px;
+}
+
+.navigation button{
+
+    flex:1;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2d6a4f,
+        #1b4332
+    );
+
+    transition:.4s;
+}
+
+.navigation button:hover{
+
+    transform:
+    translateY(-3px);
+}
+/* ===================================================
+   BOTÕES EXTRAS
+=================================================== */
+
+.extra-buttons{
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.extra-buttons button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    background:#34495e;
+
+    color:white;
+
+    transition:.4s;
+}
+
+.extra-buttons button:hover{
+
+    background:#22313f;
+}
+
+/* ===================================================
+   RESPONSIVIDADE
+=================================================== */
+
+@media(max-width:900px){
+
+    .book-container{
+
+        padding:30px;
+    }
+
+    .speech{
+
+        width:180px;
+
+        right:70px;
+    }
+}
+
+@media(max-width:700px){
+
+    .book-container::before{
+
+        display:none;
+    }
+
+    .navigation{
+
+        flex-direction:column;
+    }
+
+    .extra-buttons{
+
+        flex-direction:column;
+    }
+
+    .mascot{
+
+        position:relative;
+
+        top:auto;
+        right:auto;
+
+        text-align:center;
+
+        margin-bottom:20px;
+    }
+
+    .speech{
+
+        position:relative;
+
+        width:100%;
+
+        right:auto;
+        top:auto;
+
+        margin-top:10px;
+    }
+
+    .speech::after{
+
+        display:none;
+    }
+}
+/* ===================================================
+   PÁGINA 8 - ESCOLHA DO FUTURO
+=================================================== */
+
+.choice-area{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.future-choice{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:20px 30px;
+
+    border-radius:15px;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    transition:.4s;
+
+    color:white;
+
+    min-width:260px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+}
+
+.future-choice.positive{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2ecc71,
+        #27ae60
+    );
+}
+
+.future-choice.negative{
+
+    background:
+    linear-gradient(
+        135deg,
+        #e74c3c,
+        #c0392b
+    );
+}
+
+.future-choice:hover{
+
+    transform:
+    scale(1.05)
+    translateY(-5px);
+}
+
+/* resultado da escolha */
+
+#futureResult{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    background:white;
+
+    color:#222;
+
+    min-height:80px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ===================================================
+   MODAL
+=================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.7);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+}
+
+.modal-content{
+
+    background:white;
+
+    color:#222;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    width:90%;
+
+    max-width:400px;
+
+    position:relative;
+
+    animation:modalIn .4s ease;
+}
+
+#closeModal{
+
+    position:absolute;
+
+    top:10px;
+    right:15px;
+
+    cursor:pointer;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+}
+
+@keyframes modalIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+}
+
+/* ===================================================
+   CAPA FINAL
+=================================================== */
+
+#finalCover{
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        180deg,
+        #b7e4c7,
+        #95d5b2,
+        #52b788
+    );
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.final-content{
+
+    width:90%;
+
+    max-width:900px;
+
+    z-index:10;
+
+    color:#1b4332;
+}
+
+.final-content h1{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+}
+
+.final-content h2{
+
+    margin-bottom:15px;
+}
+
+.final-content p{
+
+    margin-bottom:20px;
+
+    font-size:1.1rem;
+}
+
+/* ===================================================
+   ÁRVORE CRESCENDO
+=================================================== */
+
+.tree-growth{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:200px;
+
+    height:300px;
+}
+
+/* semente */
+
+.seed{
+
+    width:18px;
+
+    height:18px;
+
+    background:#7f5539;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:seedGrow 6s ease forwards;
+}
+
+/* tronco */
+
+.stem{
+
+    width:10px;
+
+    height:0;
+
+    background:#5a3e2b;
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:stemGrow 6s ease forwards;
+}
+
+/* árvore */
+
+.tree{
+
+    width:0;
+    height:0;
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#2ecc71;
+
+    border-radius:50%;
+
+    animation:treeGrow 6s ease forwards;
+}
+
+/* animações crescimento */
+
+@keyframes seedGrow{
+
+    0%{ transform:translateX(-50%) scale(1); }
+
+    50%{ transform:translateX(-50%) scale(1.5); }
+
+    100%{ transform:translateX(-50%) scale(0); }
+}
+
+@keyframes stemGrow{
+
+    0%{ height:0; }
+
+    100%{ height:120px; }
+}
+
+@keyframes treeGrow{
+
+    0%{
+
+        width:0;
+        height:0;
+    }
+
+    100%{
+
+        width:140px;
+        height:140px;
+    }
+}
+
+/* ===================================================
+   MENSAGEM FINAL
+=================================================== */
+
+.mascot-message{
+
+    margin-top:25px;
+
+    background:white;
+
+    color:#1b4332;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ===================================================
+   CONFETE (100%)
+=================================================== */
+
+.final-progress{
+
+    margin-top:20px;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#14532d;
+}
+
+/* efeito confete simples */
+
+.final-cover-active::before,
+.final-cover-active::after{
+
+    content:"🎉";
+
+    position:absolute;
+
+    font-size:2rem;
+
+    animation:confetti 2s infinite linear;
+}
+
+.final-cover-active::before{
+
+    left:20%;
+
+    top:20%;
+}
+
+.final-cover-active::after{
+
+    right:20%;
+
+    top:30%;
+}
+
+@keyframes confetti{
+
+    0%{
+
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+
+    100%{
+
+        transform:translateY(400px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ===================================================
+   AJUSTES FINAIS RESPONSIVOS
+=================================================== */
+
+@media(max-width:600px){
+
+    .final-content h1{
+
+        font-size:1.8rem;
+    }
+
+    .tree-growth{
+
+        transform:translateX(-50%) scale(.8);
+    }
+
+    .future-choice{
+
+        width:100%;
+    }
+}
